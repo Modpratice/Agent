@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>agnt.markets | Autonomous AI Agents on Solana</title>
+    <meta name="description" content="Mint AI agent NFTs that work for you 24/7. Earn passive income through autonomous trading on Solana." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./src/index.css">
+</head>
+<body class="bg-[#0a0f0a] text-white font-mono antialiased overflow-x-hidden">
+    <div class="h-screen w-screen flex flex-col overflow-hidden relative">
+        <!-- Background Canvas (Placeholder for the original effect) -->
+        <canvas id="bg-canvas" class="fixed inset-0 pointer-events-none opacity-20 z-0"></canvas>
+
+        <div class="relative z-10 flex flex-col h-full">
+            <!-- Navigation -->
+            <nav class="flex items-center justify-between px-4 h-12 border-b border-white/10 bg-[#0a0f0a]/80 backdrop-blur-sm">
+                <div class="flex items-center gap-1">
+                    <a href="./" class="flex items-center">
+                        <img src="https://www.agntmarkets.xyz/agntlogo.png" alt="AGNT" class="w-7 h-7 mr-2" referrerPolicy="no-referrer">
+                    </a>
+                    <div class="hidden md:flex items-center gap-1">
+                        <a href="#" class="px-3 py-1.5 text-[10px] tracking-wider transition-colors bg-[#6ee38c]/20 text-[#6ee38c] border border-[#6ee38c]/30">AGENTS</a>
+                        <a href="#" class="px-3 py-1.5 text-[10px] tracking-wider transition-colors text-white/50 hover:text-white hover:bg-white/5">CLAIM</a>
+                        <a href="#" class="px-3 py-1.5 text-[10px] tracking-wider transition-colors text-white/50 hover:text-white hover:bg-white/5">PORTFOLIO</a>
+                        <a href="#" class="px-3 py-1.5 text-[10px] tracking-wider transition-colors text-white/50 hover:text-white hover:bg-white/5">STATS</a>
+                        <a href="#" class="px-3 py-1.5 text-[10px] tracking-wider transition-colors text-white/50 hover:text-white hover:bg-white/5">LEADERBOARD</a>
+                        <a href="#" class="px-3 py-1.5 text-[10px] tracking-wider transition-colors text-white/50 hover:text-white hover:bg-white/5">DOCS</a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2">
+                    <a href="./sol-agent/" class="px-3 py-1.5 text-[10px] tracking-wider border border-[#6ee38c]/30 text-[#6ee38c] hover:bg-[#6ee38c]/10 transition-colors text-center inline-block">Connect</a>
+                    <button id="mobile-menu-btn" class="md:hidden p-1.5 text-white/50 hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                    </button>
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <div class="flex-1 flex flex-col items-center justify-center p-4 sm:p-6 overflow-auto">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 w-full max-w-5xl mx-auto">
+                    <!-- Agent Card: SPOON -->
+                    <div class="agent-card group border border-white/10 bg-white/5 p-2 sm:p-4 flex flex-col w-full cursor-pointer transition-all duration-300 ease-out hover:scale-105 hover:border-[#6ee38c] hover:shadow-[0_0_30px_rgba(110,227,140,0.3),0_0_60px_rgba(110,227,140,0.15),inset_0_0_30px_rgba(110,227,140,0.05)]">
+                        <div class="flex-1 flex flex-col items-center justify-center">
+                            <div class="w-20 h-20 sm:w-36 sm:h-36 rounded overflow-hidden mb-2 border border-white/5 group-hover:border-[#6ee38c]/30 transition-colors">
+                                <img src="https://www.agntmarkets.xyz/agent-spoon.gif" alt="AGENT. SPOON." class="object-cover w-full h-full" referrerPolicy="no-referrer">
+                            </div>
+                            <h3 class="text-[10px] sm:text-xs text-white mb-1 text-center font-bold tracking-widest uppercase">AGENT. SPOON.</h3>
+                            <p class="text-[10px] sm:text-xs text-[#6ee38c] mb-2 font-bold">0.1 SOL</p>
+                        </div>
+                        <div class="space-y-1 mb-3 hidden sm:block border-t border-white/5 pt-3">
+                            <div class="flex justify-between text-[10px]"><span class="text-white/40">ROI</span><span class="text-[#6ee38c]">4.2%</span></div>
+                            <div class="flex justify-between text-[10px]"><span class="text-white/40">Uptime</span><span class="text-white">95.0%</span></div>
+                            <div class="flex justify-between text-[10px]"><span class="text-white/40">Trades</span><span class="text-white">80/day</span></div>
+                        </div>
+                        <a href="./sol-agent/" class="w-full py-2 text-[9px] sm:text-[10px] font-bold tracking-[0.2em] transition-all bg-[#6ee38c] text-black hover:bg-white text-center block">CONNECT WALLET</a>
+                    </div>
+
+                    <!-- Agent Card: TRI -->
+                    <div class="agent-card group border border-white/10 bg-white/5 p-2 sm:p-4 flex flex-col w-full cursor-pointer transition-all duration-300 ease-out hover:scale-105 hover:border-[#6ee38c] hover:shadow-[0_0_30px_rgba(110,227,140,0.3),0_0_60px_rgba(110,227,140,0.15),inset_0_0_30px_rgba(110,227,140,0.05)]">
+                        <div class="flex-1 flex flex-col items-center justify-center">
+                            <div class="w-20 h-20 sm:w-36 sm:h-36 rounded overflow-hidden mb-2 border border-white/5 group-hover:border-[#6ee38c]/30 transition-colors">
+                                <img src="https://www.agntmarkets.xyz/agent-tri.gif" alt="AGENT. TRI." class="object-cover w-full h-full" referrerPolicy="no-referrer">
+                            </div>
+                            <h3 class="text-[10px] sm:text-xs text-white mb-1 text-center font-bold tracking-widest uppercase">AGENT. TRI.</h3>
+                            <p class="text-[10px] sm:text-xs text-[#6ee38c] mb-2 font-bold">0.25 SOL</p>
+                        </div>
+                        <div class="space-y-1 mb-3 hidden sm:block border-t border-white/5 pt-3">
+                            <div class="flex justify-between text-[10px]"><span class="text-white/40">ROI</span><span class="text-[#6ee38c]">8.5%</span></div>
+                            <div class="flex justify-between text-[10px]"><span class="text-white/40">Uptime</span><span class="text-white">97.5%</span></div>
+                            <div class="flex justify-between text-[10px]"><span class="text-white/40">Trades</span><span class="text-white">240/day</span></div>
+                        </div>
+                        <a href="./sol-agent/" class="w-full py-2 text-[9px] sm:text-[10px] font-bold tracking-[0.2em] transition-all bg-[#6ee38c] text-black hover:bg-white text-center block">CONNECT WALLET</a>
+                    </div>
+
+                    <!-- Agent Card: MORP -->
+                    <div class="agent-card group border border-white/10 bg-white/5 p-2 sm:p-4 flex flex-col w-full cursor-pointer transition-all duration-300 ease-out hover:scale-105 hover:border-[#6ee38c] hover:shadow-[0_0_30px_rgba(110,227,140,0.3),0_0_60px_rgba(110,227,140,0.15),inset_0_0_30px_rgba(110,227,140,0.05)]">
+                        <div class="flex-1 flex flex-col items-center justify-center">
+                            <div class="w-20 h-20 sm:w-36 sm:h-36 rounded overflow-hidden mb-2 border border-white/5 group-hover:border-[#6ee38c]/30 transition-colors">
+                                <img src="https://www.agntmarkets.xyz/agent-morp.gif" alt="AGENT. MORP." class="object-cover w-full h-full" referrerPolicy="no-referrer">
+                            </div>
+                            <h3 class="text-[10px] sm:text-xs text-white mb-1 text-center font-bold tracking-widest uppercase">AGENT. MORP.</h3>
+                            <p class="text-[10px] sm:text-xs text-[#6ee38c] mb-2 font-bold">0.5 SOL</p>
+                        </div>
+                        <div class="space-y-1 mb-3 hidden sm:block border-t border-white/5 pt-3">
+                            <div class="flex justify-between text-[10px]"><span class="text-white/40">ROI</span><span class="text-[#6ee38c]">15.2%</span></div>
+                            <div class="flex justify-between text-[10px]"><span class="text-white/40">Uptime</span><span class="text-white">99.1%</span></div>
+                            <div class="flex justify-between text-[10px]"><span class="text-white/40">Trades</span><span class="text-white">520/day</span></div>
+                        </div>
+                        <a href="./sol-agent/" class="w-full py-2 text-[9px] sm:text-[10px] font-bold tracking-[0.2em] transition-all bg-[#6ee38c] text-black hover:bg-white text-center block">CONNECT WALLET</a>
+                    </div>
+
+                    <!-- Agent Card: NEO -->
+                    <div class="agent-card group border border-white/10 bg-white/5 p-2 sm:p-4 flex flex-col w-full cursor-pointer transition-all duration-300 ease-out hover:scale-105 hover:border-[#6ee38c] hover:shadow-[0_0_30px_rgba(110,227,140,0.3),0_0_60px_rgba(110,227,140,0.15),inset_0_0_30px_rgba(110,227,140,0.05)]">
+                        <div class="flex-1 flex flex-col items-center justify-center">
+                            <div class="w-20 h-20 sm:w-36 sm:h-36 rounded overflow-hidden mb-2 border border-white/5 group-hover:border-[#6ee38c]/30 transition-colors">
+                                <img src="https://www.agntmarkets.xyz/agent-neo.gif" alt="AGENT. NEO." class="object-cover w-full h-full" referrerPolicy="no-referrer">
+                            </div>
+                            <h3 class="text-[10px] sm:text-xs text-white mb-1 text-center font-bold tracking-widest uppercase">AGENT. NEO.</h3>
+                            <p class="text-[10px] sm:text-xs text-[#6ee38c] mb-2 font-bold">1 SOL</p>
+                        </div>
+                        <div class="space-y-1 mb-3 hidden sm:block border-t border-white/5 pt-3">
+                            <div class="flex justify-between text-[10px]"><span class="text-white/40">ROI</span><span class="text-[#6ee38c]">28.7%</span></div>
+                            <div class="flex justify-between text-[10px]"><span class="text-white/40">Uptime</span><span class="text-white">99.9%</span></div>
+                            <div class="flex justify-between text-[10px]"><span class="text-white/40">Trades</span><span class="text-white">1.2k/day</span></div>
+                        </div>
+                        <a href="./sol-agent/" class="w-full py-2 text-[9px] sm:text-[10px] font-bold tracking-[0.2em] transition-all bg-[#6ee38c] text-black hover:bg-white text-center block">CONNECT WALLET</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="flex items-center justify-between px-4 h-10 border-t border-white/10 text-[10px] bg-[#0a0f0a]">
+                <div class="flex items-center gap-4">
+                    <div class="flex items-center gap-1.5">
+                        <div class="w-1.5 h-1.5 rounded-full bg-[#6ee38c] animate-pulse"></div>
+                        <span class="text-[#6ee38c] font-bold tracking-widest uppercase">System Online</span>
+                    </div>
+                    <span class="text-white/30 hidden sm:inline tracking-widest">NETWORK: SOLANA_MAINNET</span>
+                </div>
+                <div class="flex items-center gap-4 text-white/30">
+                    <span id="current-time" class="hidden sm:inline">00:00:00</span>
+                    <div class="flex gap-3">
+                        <a href="#" class="hover:text-white transition-colors">TERMS</a>
+                        <span class="text-white/10">|</span>
+                        <a href="#" class="hover:text-white transition-colors">PRIVACY</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black z-50 flex flex-col p-6 hidden">
+        <div class="flex justify-end mb-8">
+            <button id="close-menu-btn" class="p-2 text-white/50 hover:text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <div class="flex flex-col gap-6 items-center">
+            <a href="#" class="text-2xl font-bold tracking-[0.2em] text-[#6ee38c]">AGENTS</a>
+            <a href="#" class="text-2xl font-bold tracking-[0.2em] text-white/50">CLAIM</a>
+            <a href="#" class="text-2xl font-bold tracking-[0.2em] text-white/50">PORTFOLIO</a>
+            <a href="#" class="text-2xl font-bold tracking-[0.2em] text-white/50">STATS</a>
+            <a href="#" class="text-2xl font-bold tracking-[0.2em] text-white/50">LEADERBOARD</a>
+            <a href="#" class="text-2xl font-bold tracking-[0.2em] text-white/50">DOCS</a>
+        </div>
+    </div>
+
+    <script type="module" src="./src/main.js"></script>
+</body>
+</html>

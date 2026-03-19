@@ -1,0 +1,20 @@
+{
+  "name": "agnt-markets-vanilla",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port=3000 --host=0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "echo 'No linting configured'"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.14",
+    "lucide": "^0.479.0",
+    "tailwindcss": "^4.1.14"
+  },
+  "devDependencies": {
+    "vite": "^6.2.0"
+  }
+}
